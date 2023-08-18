@@ -1,6 +1,31 @@
 function App() {
   return (
     <div className="wrapper clear">
+      <div className="overlay">
+        <div className="drawer">
+          <h2>Shopping cart</h2>
+
+            <div className="cartItem d-flex align-center">
+              <img 
+                className="mr-20" 
+                width={70} 
+                height={70} 
+                src="/img/sneakers/1.jpg" 
+                alt="sneakers_1" />
+
+              <div className="mr-20">
+                <p className="mb-5">Men's sneakers Nike Blazer Mid Suede</p>
+                <b>139 USD</b>
+              </div>
+              <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
+            </div>
+        </div>
+      </div>
+
+
+
+
+
       <header className="d-flex justify-between align-center p-40">
         <div className="d-flex align-center">
           <img width={40} height={40} src="/img/logo.png" alt="logo"/>
@@ -35,7 +60,7 @@ function App() {
           <div className="favorite">
             <img src="/img/unliked.svg" alt="unlike" />
           </div>
-          <img src="/img/sneakers/1.jpg" alt="sneakers_1" width={133} height={112}/>
+          <img className="d-flex justify-center" src="/img/sneakers/1.jpg" alt="sneakers_1" width={133} height={112}/>
           <h5>Men's sneakers Nike Blazer Mid Suede</h5>
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
