@@ -3,22 +3,48 @@ function App() {
     <div className="wrapper clear">
       <div className="overlay">
         <div className="drawer">
-          <h2>Shopping cart</h2>
+          <h2 className="mb-30"> Shopping cart</h2>
 
-            <div className="cartItem d-flex align-center">
-              <img 
-                className="mr-20" 
-                width={70} 
-                height={70} 
-                src="/img/sneakers/1.jpg" 
-                alt="sneakers_1" />
+          <div className="items flex">
+          <div className="cartItem d-flex align-center mb-20">
+              
+              <div style={{backgroundImage:"url(/img/sneakers/1.jpg)"}} className="cartItemImg">
 
-              <div className="mr-20">
+              </div>
+              <div className="mr-20 flex">
                 <p className="mb-5">Men's sneakers Nike Blazer Mid Suede</p>
-                <b>139 USD</b>
+                <b>$ 139.00</b>
               </div>
               <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
             </div>
+
+            <div className="cartItem d-flex align-center mb-20">
+              
+              <div style={{backgroundImage:"url(/img/sneakers/3.jpg)"}} className="cartItemImg">
+
+              </div>
+              <div className="mr-20 flex">
+                <p className="mb-5">Men's sneakers Nike Blazer Mid Suede</p>
+                <b>$ 110.00</b>
+              </div>
+              <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
+            </div>
+          </div>
+        <div className="cartTotalBlock">
+         <ul>
+          <li>
+            <span>Total:</span>
+            <div></div>
+            <b>$ 249.00</b>
+          </li>
+          <li>
+            <span>Duty 5%:</span>
+            <div></div>
+            <b>$ 12.45</b>
+          </li>
+         </ul>
+         <button>Make an order</button>
+         </div>
         </div>
       </div>
 
@@ -37,7 +63,7 @@ function App() {
         <ul className="d-flex">
           <li className="mr-30">
           <img width={18} height={18} src="/img/cart.svg" alt="cart"/>
-              <span> 100 USD</span>
+              <span> $100</span>
           </li>
           <li>
           <img width={18} height={18} src="/img/user.svg" alt="user"/>
@@ -65,7 +91,7 @@ function App() {
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
               <span>Price:</span>
-              <b>139 USD</b>
+              <b>$ 139.00</b>
             </div>
             <button className="button">
               <img width={11}
@@ -81,7 +107,7 @@ function App() {
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
               <span>Price:</span>
-              <b>156 USD</b>
+              <b>$ 156.00</b>
             </div>
             <button className="button">
               <img width={11}
@@ -97,7 +123,7 @@ function App() {
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
               <span>Price:</span>
-              <b>110 USD</b>
+              <b>$ 110.00</b>
             </div>
             <button className="button">
               <img width={11}
@@ -113,7 +139,7 @@ function App() {
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
               <span>Price:</span>
-              <b>89 USD</b>
+              <b>$ 89.00</b>
             </div>
             <button className="button">
               <img width={11}
