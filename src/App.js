@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Card from './components/Card'
 import Header from './components/Header'
 import Drawer from './components/Drawer'
@@ -13,8 +15,15 @@ const arr = [
 
 
 function App() {
+  let [count, setCount] = React.useState(0)
+  
   return (
     <div className="wrapper clear">
+      <div className='d-flex align-center justify-center'>
+        <h1>{count}</h1>
+        <button className='ml-10 mr-5' onClick={()=>setCount(count+1)}>+</button>
+        <button  onClick={()=>setCount(count-1)}>-</button>
+      </div>
       <Drawer />
       <Header />
 
@@ -32,7 +41,8 @@ function App() {
           <Card title={obj.name}
               price={obj.price} 
               imgUrl ={obj.imageUrl}
-              onClick={()=> console.log(obj)}/>
+              onFavorite ={()=> console.log("added to favorite")}
+              onPlus={()=> console.log("typed plus")}/>
             )}
         </div>
       </div>
