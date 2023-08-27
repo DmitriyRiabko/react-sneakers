@@ -3,15 +3,14 @@ import Header from './components/Header'
 import Drawer from './components/Drawer'
 
 
-const arr = [{
-  name :"Men's sneakers Nike Blazer Mid Suede",
-  price :"139.00"
-},
-{
-  name :"Men's sneakers Nike Air Max 270",
-  price :"160.00"
-},
+const arr = [
+  {name :"Men's sneakers Nike Blazer Mid Suede",price :"139.00",imageUrl:'/img/sneakers/1.jpg'},
+  {name :"Men's sneakers Nike Air Max 270",price :"160.00",imageUrl:'/img/sneakers/2.jpg'},
+  {name :"Men's sneakers Nike Blazer Mid Suede",price :"140.99",imageUrl:'/img/sneakers/3.jpg'},
+  {name :"Men's sneakers Puma X Aka Boku Future Rider",price :"125.68",imageUrl:'/img/sneakers/4.jpg'},
 ]
+
+
 
 function App() {
   return (
@@ -29,17 +28,12 @@ function App() {
         </div>
 
         <div className="d-flex">
-          
-        <Card title={arr[0].name}
-              price={arr[0].price} 
-              imgUrl = "/img/sneakers/1.jpg"
-        />
-          <Card title={arr[1].name}
-              price={arr[1].price} 
-              imgUrl = "/img/sneakers/2.jpg"
-        />
-
-          
+          {arr.map(obj =>
+          <Card title={obj.name}
+              price={obj.price} 
+              imgUrl ={obj.imageUrl}
+              onClick={()=> console.log(obj)}/>
+            )}
         </div>
       </div>
     </div>
