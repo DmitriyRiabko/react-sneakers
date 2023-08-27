@@ -19,11 +19,6 @@ function App() {
   
   return (
     <div className="wrapper clear">
-      <div className='d-flex align-center justify-center'>
-        <h1>{count}</h1>
-        <button className='ml-10 mr-5' onClick={()=>setCount(count+1)}>+</button>
-        <button  onClick={()=>setCount(count-1)}>-</button>
-      </div>
       <Drawer />
       <Header />
 
