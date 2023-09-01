@@ -5,25 +5,27 @@ import Header from './components/Header'
 import Drawer from './components/Drawer'
 
 
-const arr = [
-  {name :"Men's sneakers Nike Blazer Mid Suede",price :"139.00",imageUrl:'/img/sneakers/1.jpg'},
-  {name :"Men's sneakers Nike Air Max 270",price :"160.00",imageUrl:'/img/sneakers/2.jpg'},
-  {name :"Men's sneakers Nike Blazer Mid Suede",price :"140.99",imageUrl:'/img/sneakers/3.jpg'},
-  {name :"Men's sneakers Puma X Aka Boku Future Rider",price :"125.68",imageUrl:'/img/sneakers/4.jpg'},
-]
+
 
 
 
 function App() {
-  let [count, setCount] = React.useState(0)
-  
+  const [items,setItems] = React.useState([])
+  const [cartOpened, setCartOpened] = React.useState(false)
+
+
+  React.useEffect(()=>{
+  fetch("https://64ecf64df9b2b70f2bfb2ca5.mockapi.io/items")
+  .then(res => res.json())
+  .then(json => setItems(json))
+  }, [])
   return (
     <div className="wrapper clear">
-      <Drawer />
-      <Header />
+      <Header onClickCart={()=>setCartOpened(true)}/>
+      {cartOpened && <Drawer onClose={()=>setCartOpened(false)}/>}
 
       <div className="content p-40">
-        <div className="mb-40 d-flex justify-between align-center">
+        <div className="mb-40 d-flex justify-between align-center ">
           <h1>All Sneakers</h1>
           <div className="search-block">
             <img className="" src="/img/search.svg" alt="search" />
@@ -31,8 +33,8 @@ function App() {
           </div>
         </div>
 
-        <div className="d-flex">
-          {arr.map(obj =>
+        <div className="d-flex flex-wrap justify-between">
+          {items.map(obj =>
           <Card title={obj.name}
               price={obj.price} 
               imgUrl ={obj.imageUrl}

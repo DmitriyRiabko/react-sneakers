@@ -1,11 +1,12 @@
-function Drawer() {
+function Drawer(props) {
   return (
-    <div style={{ display: "none" }} className="overlay">
+    <div  className="overlay">
       <div className="drawer">
         <h2 className="mb-30 d-flex justify-between">
           {" "}
           Shopping cart
           <img
+            onClick={props.onClose}
             className="removeBtn  cu-p"
             src="/img/btn-remove.svg"
             alt="remove"
