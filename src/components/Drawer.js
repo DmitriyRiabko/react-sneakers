@@ -1,4 +1,4 @@
-function Drawer(props) {
+function Drawer({onClose, items= []}) {
   return (
     <div  className="overlay">
       <div className="drawer">
@@ -6,7 +6,7 @@ function Drawer(props) {
           {" "}
           Shopping cart
           <img
-            onClick={props.onClose}
+            onClick={onClose}
             className="removeBtn  cu-p"
             src="/img/btn-remove.svg"
             alt="remove"
@@ -14,29 +14,19 @@ function Drawer(props) {
         </h2>
 
         <div className="items flex">
+          {items.map((obj) =>
           <div className="cartItem d-flex align-center mb-20">
             <div
-              style={{ backgroundImage: "url(/img/sneakers/1.jpg)" }}
+              style={{ backgroundImage: `url(${obj.imageUrl})` }}
               className="cartItemImg"
             ></div>
             <div className="mr-20 flex">
-              <p className="mb-5">Men's sneakers Nike Blazer Mid Suede</p>
-              <b>$ 139.00</b>
+              <p className="mb-5">{obj.name}</p>
+              <b>{obj.price}</b>
             </div>
             <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
           </div>
-
-          <div className="cartItem d-flex align-center mb-20">
-            <div
-              style={{ backgroundImage: "url(/img/sneakers/3.jpg)" }}
-              className="cartItemImg"
-            ></div>
-            <div className="mr-20 flex">
-              <p className="mb-5">Men's sneakers Nike Blazer Mid Suede</p>
-              <b>$ 110.00</b>
-            </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
-          </div>
+              )}
         </div>
 
         <div className="cartTotalBlock">
