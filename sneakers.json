@@ -1,0 +1,56 @@
+[
+{
+    "id": "0",
+    "title": "Men's sneakers Nike Blazer Mid Green",
+    "price": "130.00",
+    "imageUrl": "/img/sneakers/1.jpg"
+},
+{
+    "id": "1",
+    "title": "Men's sneakers Nike Air Max 270",
+    "price": "200.50",
+    "imageUrl": "/img/sneakers/2.jpg"
+},
+{
+    "id": "2",
+    "title": "Men's sneakers Nike Blazer Mid Suede",
+    "price": "160.00",
+    "imageUrl": "/img/sneakers/3.jpg"
+},
+{
+    "id": "3",
+    "title": "Men's sneakers Puma X Aka Boku Future Rider",
+    "price": "145.50",
+    "imageUrl": "/img/sneakers/4.jpg"
+},
+{
+    "id": "4",
+    "title": "Men's sneakers Under Armour Curry 8",
+    "price": "179,00",
+    "imageUrl": "/img/sneakers/5.jpg"
+},
+{
+    "id": "5",
+    "title": "Men's sneakers Nike Kyrie 7",
+    "price": "240.00",
+    "imageUrl": "/img/sneakers/6.jpg"
+},
+{
+    "id": "6",
+    "title": "Men's sneakers Jordan Air Jordan 11",
+    "price": "199.00",
+    "imageUrl": "/img/sneakers/7.jpg"
+},
+{
+    "id": "7",
+    "title": "Men's sneakersNike LeBron XVIII",
+    "price": "175.50",
+    "imageUrl": "/img/sneakers/8.jpg"
+},
+{
+    "id": "8",
+    "title": "Men's sneakers Nike Lebron XVIII Low",
+    "price": "141.00",
+    "imageUrl": "/img/sneakers/9.jpg"
+}
+]
