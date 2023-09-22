@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './Card.module.scss'
 
-console.log(styles);
-
 function Card({imgUrl,title,price,onFavorite, onPlus}) {
   const [isAdded, setIsAdded] = React.useState(false)
 
