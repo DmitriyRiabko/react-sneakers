@@ -3,19 +3,28 @@ import styles from './Card.module.scss'
 
 function Card({imgUrl,title,price,onFavorite, onPlus}) {
   const [isAdded, setIsAdded] = React.useState(false)
+  const [isLiked, setIsLiked] = React.useState(false)
 
   const onClickPlus = ()=>{
     onPlus({title,imgUrl,price})
     setIsAdded(!isAdded)
   }
 
+
+  const onClickFavorite = ()=>{
+    onFavorite({title,imgUrl,price})
+    setIsLiked(!isLiked)
+  }
+  
+
   return (
     <div className={styles.card}>
-      <div className={styles.favorite} onClick={onFavorite}>
-        <img src="/img/unliked.svg" alt="unlike" />
+      <div className={styles.favorite} onClick={onClickFavorite}>
+        <img src ={isLiked ? '/img/liked.svg' :"/img/unliked.svg"}  
+         />
       </div>
       <img
-        className="d-flex justify-center"
+        className="d-flex "
         src={imgUrl}
         alt="sneakers_1"
         width={133}
@@ -30,7 +39,8 @@ function Card({imgUrl,title,price,onFavorite, onPlus}) {
           <img className={styles.plus} 
           src={isAdded ? "img/btn-checked.svg" : "img/btn-plus.svg"} 
           alt="add" 
-          onClick={onClickPlus}/>
+          onClick={onClickPlus}
+         />
       </div>
     </div>
   );
