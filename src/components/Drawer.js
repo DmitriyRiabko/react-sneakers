@@ -1,4 +1,6 @@
-function Drawer({onClose, items= []}) {
+import {FiInbox} from 'react-icons/fi'
+
+function Drawer({onClose, onRemove, items= []}) {
   return (
     <div  className="overlay">
       <div className="drawer">
@@ -12,8 +14,8 @@ function Drawer({onClose, items= []}) {
             alt="remove"
           />
         </h2>
-
-        <div className="items flex">
+      {items.length >0 ? 
+        <div className="items h100p">
           {items.map((obj) =>
           <div className="cartItem d-flex align-center mb-20">
             <div
@@ -21,13 +23,20 @@ function Drawer({onClose, items= []}) {
               className="cartItemImg"
             ></div>
             <div className="mr-20 flex">
-              <p className="mb-5">{obj.name}</p>
-              <b>{obj.price}</b>
+              <p className="mb-5">{obj.title}</p>
+              <b> $ {obj.price}</b>
             </div>
-            <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
+            <img onClick={() => onRemove(obj.id)} className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
           </div>
               )}
-        </div>
+        </div> 
+       : 
+       <div className="d-flex justify-center h100p align-center flex-column">
+        <div><FiInbox  style={{width:'60px',height:'60px',color:'#9dd558'}}/></div>
+        <b>Your cart is empty</b>
+       </div> 
+       }
+        
 
         <div className="cartTotalBlock">
           <ul>
